@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Fetch API</title>
+
+    <!-- LINK CSS -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="containter">
+        <h1>Paul Hamploix</h1>
+        <div id="subtitle">Le meilleur des sites pour trouver du travail !</div>
+        <div id="offers"></div>
+    </div>
+
+    <!-- LINK TO SCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!--
+    <h1>Paul Hamploix</h1>
+    <div id="subtitle">Le meilleur des sites pour trouver du travail !</div>
+    <div id="offers"></div> 
+    Dans cet exercice on va utiliser une route API interne à Code Passport pour récupérer une liste d'offres avec fetch puis les afficher dans le HTML de la page.
+
+    Utilise fetch sur la route /api/offers, puis génère les offres dans la balise <div id="offers"></div> du HTML de l'exercice.
+
+    💡 Clique sur APERÇU pour visualiser la page web.
+
+    ⚠️ Pour que les tests fonctionnent correctement, il faut que tu utilises await et non .then() lorsque tu as du code asynchrone. Les "toplevel" awaits fonctionnent dans Code Passport 😁
+
+    document.addEventListener("DOMContentLoaded", () => {
+    async function fetchOffers() {
+        try {
+            // Remplacer par l'URL de votre API
+            const response = await fetch('https://api.exemple.com/offres');
+            if (!response.ok) {
+                throw new Error('Erreur lors de la récupération des offres');
+            }
+
+            const offers = await response.json();
+            displayOffers(offers);
+        } catch (error) {
+            console.error('Erreur:', error);
+            const offersDiv = document.getElementById('offers');
+            offersDiv.innerHTML = `<p>Une erreur est survenue : ${error.message}</p>`;
+        }
+    }
+
+    function displayOffers(offers) {
+        const offersDiv = document.getElementById('offers');
+        offersDiv.innerHTML = ''; // Effacer les anciennes offres
+
+        offers.forEach(offer => {
+            const offerDiv = document.createElement('div');
+            offerDiv.classList.add('offer');
+            
+            offerDiv.innerHTML = `
+                <h2>${offer.title}</h2>
+                <p>${offer.description}</p>
+                <p><strong>Prix :</strong> ${offer.price} €</p>
+            `;
+
+            offersDiv.appendChild(offerDiv);
+        });
+    }
+
+    fetchOffers();
+});
+
+-->
